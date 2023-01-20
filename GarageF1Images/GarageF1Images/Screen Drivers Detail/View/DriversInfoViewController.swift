@@ -22,7 +22,6 @@ class DriversInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
     }
+    
 }

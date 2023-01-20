@@ -19,7 +19,6 @@ class CustomTableViewCellScreen: UIView {
         let background = UIImageView()
         background.translatesAutoresizingMaskIntoConstraints = false
         background.image = UIImage(named: "back")
-//        UIColor(red: 66, green: 66, blue: 66, alpha: 1.0) -> Cor correta, não consigo implementar
         return background
     }()
         

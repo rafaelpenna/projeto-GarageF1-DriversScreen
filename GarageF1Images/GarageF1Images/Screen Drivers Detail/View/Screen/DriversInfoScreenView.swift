@@ -8,7 +8,6 @@
 import UIKit
 
 class DriversInfoScreenView: UIView {
-    
 
     lazy var topLabel: UILabel = {
         let label = UILabel()
@@ -42,19 +41,18 @@ class DriversInfoScreenView: UIView {
         image.image = UIImage(named: "Leclerc1")
         return image
     }()
-   
+    
+    private lazy var boardInfo: DriversInfoStackList = {
+        let variable = DriversInfoStackList()
+        variable.translatesAutoresizingMaskIntoConstraints = false
+        return variable
+    }()
+    
     lazy var bottomLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .gray
         // Precisa colocar a cor certa
-        return label
-    }()
-    
-    lazy var boardInfo: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor(red: 243, green: 243, blue: 243, alpha: 1)
         return label
     }()
     
@@ -65,8 +63,8 @@ class DriversInfoScreenView: UIView {
         self.addSubview(self.firstName)
         self.addSubview(self.lastName)
         self.addSubview(self.driverPhoto)
-        self.addSubview(self.bottomLabel)
         self.addSubview(self.boardInfo)
+        self.addSubview(self.bottomLabel)
         self.configConstraintsTableView()
     }
     
@@ -101,7 +99,7 @@ class DriversInfoScreenView: UIView {
             boardInfo.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             boardInfo.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             boardInfo.topAnchor.constraint(equalTo: topLabel.bottomAnchor),
-            boardInfo.bottomAnchor.constraint(equalTo: bottomLabel.topAnchor),
+            boardInfo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -60),
         ])
     }
 }
